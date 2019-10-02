@@ -1,16 +1,72 @@
 .section__home-hero{
-	background-image:url("https://cdn.pixabay.com/photo/2016/07/12/19/08/laptop-1512838_960_720.png");
-	background-position:center;
-	background-size:cover;
-	border: 2px solid red;
 	height: 500px;
 	display: flex;
-	align-items: center;
-
-	.col-md-3, .col-md-{
-		margin-top: 20px;
-		border-radius:15px;
+	background-color: #3363C2; 
+	.hero-container-text{
+		width: 40%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		padding: 0px 50px;
+		color: white;
+		h1{
+			color: white;
+		}
+		.btn{
+			width: 22%;
+		}
 	}
-
+	.hero-container-img{
+		width: 55%;
+		height: 100%;
+		background-image: asset_url("hero5.jpg");
+		background-position: contain;
+		background-position: center;
+		position: relative;
+		.cuadrado{
+			position: absolute;
+			width: 150px;
+			height: 150px;
+			background-color: #3363C2;
+		}
+		.bottom{
+			bottom: 0px;
+			left: 0px;
+		}
+		.top{
+			right: 0px;
+			top: 0px;
+		}
+	}
 }
 
+.nav-container{
+	background: #3363C2;
+	height: 100px;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  position: sticky;
+  z-index: 2000;
+  padding: 10px 0px;
+	.component{
+		background-color:white;
+		width: 63%;
+		align-items: center;
+	  display: flex;
+	  text-align: center;
+	  cursor: pointer;
+	  border-radius: 20px;
+	  .col-md-3{
+		  height: 78px;
+	    display: flex;
+	    align-items: center;
+	    flex-direction: column;
+	    justify-content: center;
+	  }
+	  .col-md-3:hover{
+			background-color: grey;
+	  }
+	}
+}
