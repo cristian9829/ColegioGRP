@@ -19,6 +19,9 @@
  @import "home/hero";
  @import "home/about";
 
+ //Styles for view center interesting
+ @import 'center_interesting/index';
+
 
  
 
@@ -3911,7 +3914,7 @@ input[type="button"].btn-block {
 }
 
 .nav-link.disabled {
-  color: #6c757d;
+  color: #154360;
   pointer-events: none;
   cursor: default;
 }
