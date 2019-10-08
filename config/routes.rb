@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/events' , to: 'events#index'
   get '/center_interesings', to: 'center_interesings#index'
   devise_for :users
   get 'home/index'
