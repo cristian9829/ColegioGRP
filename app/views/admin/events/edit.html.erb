@@ -1,0 +1,23 @@
+<%= form_for [:admin, @event] do |f| %>
+  <div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+   <div>
+    <%= f.label :date_event %><br>
+    <%= f.text_field :date_event %>
+  </div>
+
+  <div>
+    <%= f.label :header_events %><br>
+    <%= f.text_field :header_events %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
