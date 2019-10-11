@@ -1,5 +1,21 @@
-<h1>HomeAdmin</h1>
-<!-- Menu Toggle Script -->
+<div class="section__admin-index">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<%= link_to admin_events_path, class: "card hvr-grow-shadow" do  %>
+					<h3>Numero de Eventos</h3>
+					<span> <%=@Events %></span>
+				<% end %>
+			</div>
+			<div class="col">
+				<%= link_to admin_events_path, class: "card hvr-grow-shadow" do  %>
+					<h3>Numero de Eventos</h3>
+					<span> <%=@Events %></span>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
 <script>
   $("#menu-toggle").click(function(e) {
     e.preventDefault();

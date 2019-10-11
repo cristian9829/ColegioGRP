@@ -4,6 +4,6 @@ class Admin::PagesController < ApplicationController
 	
 
 	def index
-		
+		@Events = Event.all.count
 	end
 end

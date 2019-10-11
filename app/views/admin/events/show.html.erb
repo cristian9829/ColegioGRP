@@ -1,7 +1,31 @@
-<h1>Detalles del Producto</h1>
+<div class="section__show-event">
+	<div class="container">
+		<h1>Detalles del Producto</h1>
+			<br><br>
+		<div class="row">
+	        <div class="col-md-7">
+	            <%= image_tag (@event.img), class: "img-fluid"%>
+	        </div>
+	        <div class="col-md-5">
+	          <span>Fecha del evento: <strong><%= @event.date_event %></strong></span>
+	          <p><strong>Esta en el header</strong>: 
+				<% if @event.header_events = "true" %>
+					Si esta
+				<% else %>
+					No esta
+				<% end %>
+	          </p>
+	          <h3><%= @event.title %></h3>
+	          <p><%= @event.description %></p>
+	          <span><strong>Url de la imagen:</strong> <br> <%= @event.img %> </span>
+	        </div>
+	     </div>		
+	</div>
+</div>
 
-
-<div>Titulo: <%= @event.title %></div>
-<div>Descripción: <%= @event.description %></div>
-<div>Fecha del evento: <%= @event.date_event %></div>
-<div>Este evento va en el header: <%= @event.header_events %></div>
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>

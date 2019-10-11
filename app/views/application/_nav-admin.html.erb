@@ -7,7 +7,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="btn btn-third" href="#">Salir <span class="sr-only">(current)</span></a>
+        <% if signed_in? %>
+          <%= link_to "Salir", destroy_user_session_path, :method => :delete, class: "btn btn-primary" %>
+        <% end %>
       </li>
     </ul>
   </div>

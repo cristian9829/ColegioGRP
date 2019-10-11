@@ -1,0 +1,38 @@
+<div class="container">
+	<h1>Centro de intereses</h1>
+	<hr>
+  <br>
+  <%= link_to 'Crear un nuevo centro de interes', new_admin_centro_path, class: "btn btn-primary" %>
+  <br>
+  <% @CentroInteres.each do |centro| %>
+    <div class="card m-3">
+    <div class="row p-3">
+      <div class="col-md-6">
+        <%= image_tag(centro.img, class: "img-fluid") %>
+      </div>
+      <div class="col-md-5">
+        <h3><%= centro.title %></h3>
+        <p><%= centro.description %>.</p>
+        <div class="row text-center p-4">
+          <div class="col">
+            <%= link_to "Ver",   admin_centro_path(centro), class: "btn btn-info" %>    
+          </div>
+          <div class="col">
+            <%= link_to "Editar", edit_admin_centro_path(centro) ,class: "btn btn-warning" %>    
+          </div>
+          <div class="col">
+              <%= link_to "Eliminar", admin_centro_path(centro), method: :delete, data: { confirm: "¿Estás seguro de eliminar este evento?" }, class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>

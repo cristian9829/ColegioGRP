@@ -1,3 +1,16 @@
 // Place all the styles related to the Admin/Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.section__events-admin-index{
+	height: auto;
+	padding: 75px;
+	img{    height: 338px;}
+	.text-center .btn{width: 100%;}
+}
+
+
+.section_form{
+	height: 100vh;
+}
+

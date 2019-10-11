@@ -1,15 +1,22 @@
 <!-- Sidebar -->
-<div class="bg-third text-white border-right" id="sidebar-wrapper">
+<div class="bg-primary text-white border-right" id="sidebar-wrapper">
   <div class="sidebar-heading">
-	<h1>Logo</h1>
-  </div>
-  <div class="list-group list-group-flush">
-  	<%= link_to "Home admin", class: "bg-third text-white list-group-item list-group-item-action" %>
-
-  	<%= link_to "Servicios", class: "bg-third text-white list-group-item list-group-item-action" %>
-
-  	<%= link_to "Blog", class: "bg-third text-white list-group-item list-group-item-action" %>
-
-  	<%= link_to "Casos de estudio", class: "bg-third text-white list-group-item list-group-item-action" %>
+  	<div class="container">
+  		<h1>Logo</h1>	
+  	</div>
+	<div class="list-group list-group-flush">
+		<br>
+		<div class="form-group">
+			<%= link_to "Home", root_path, class: "text-white" %>
+		</div>
+		<br>
+		<div class="form-group">
+			<%= link_to "Eventos", admin_events_path, class: " text-white" %>
+		</div>
+		<br>
+		<div class="form-group">
+			<%= link_to "Centro de intereses", admin_centros_path, class: " text-white" %>
+		</div>
+  	</div>
   </div>
 </div>

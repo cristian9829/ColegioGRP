@@ -1,0 +1,45 @@
+<div class="section_form">
+  <div class="container">
+    <div class="row">
+      <div class="col pt-5">
+        <div class="container-form card p-5 hvr-shadow">
+          <h2>Crea un nuevo evento</h2>
+          <br>
+          <%= form_for @CentroInteres, url: {action: "create"} do |f| %>
+            <div class="form-group">
+              <%= f.label :title, "Titulo del nuevo centro de interes" %><br>
+              <%= f.text_field :title, placeholder:"Escribe el nuevo titulo del centro de interes", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :description, "Descripcion del nuevo centro de interes" %><br>
+              <%= f.text_area :description, placeholder: "Escribe la nueva descripcion del centro de interes", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :requirements, "Requerimientos del  centro de interes" %><br>
+              <%= f.text_area :requirements, placeholder: "Escribe los requerimientos del centro de interes", class: "form-control" %>
+            </div>   
+             <div class="form-group">
+              <%= f.label :schedule, "Fecha del centro de interes" %><br>
+              <%= f.text_field :schedule, placeholder: "Escribe la fecha del nuevo centro de intere", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :img, "Direccion de la imagen" %><br>
+              <%= f.text_field :img, placeholder: "Escribe la Url de la imagen del centro de interes", class: "form-control" %>
+            </div>
+
+            <div>
+              <%= f.submit "Crear nuevo centro", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
+
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>

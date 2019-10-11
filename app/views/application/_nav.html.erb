@@ -9,17 +9,26 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
+            <%= link_to 'Home', root_path, class: "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <%= link_to 'Centro Interés', center_interesings_path, class: "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contacto</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
             <%= link_to 'Eventos', events_path, class: "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
           </li>
+          <% if signed_in? %>
+            <li class="nav-item mx-0 mx-lg-1">
+              <%= link_to " Admin", admin_root_path, class: " nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <%= link_to " Salir", destroy_user_session_path, method: :delete, class: "btn-primary nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
+            </li> 
+          <% else %>
+            <li class="nav-item mx-0 mx-lg-1">
+              <%= link_to " Ingresar", new_user_session_path, class: "btn-primary nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

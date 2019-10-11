@@ -7,13 +7,13 @@
     <div class="row">
 
       <div class="col-md-8">
-        <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+        <%= image_tag ( @event.img ), class: "img-fluid" %>
       </div>
 
       <div class="col-md-4">
-        <h3 class="my-3"> <%= @event.title %> </h3>
-        <p><%= @event.description %> .</p>
-        <h3 class="my-3">Project Details</h3>
+        <h2 class="my-3 text-white"> <%= @event.title %> </h2>
+        <span class="text-white"><%= @event.date_event %></span>
+        <p class="lead text-secundary"><%= @event.description %> .</p>
       </div>
 
     </div>

@@ -1,0 +1,24 @@
+.section__admin-index{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.card{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+		background-color: #1A77B6;
+		border: 2px solid #1A77B6;
+		width: 77%;
+		h3{color: white}
+		span{
+			color:  white;
+			font-size: 30px;
+		}
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}

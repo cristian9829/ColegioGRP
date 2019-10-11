@@ -1,23 +1,51 @@
-<%= form_for [:admin, @event] do |f| %>
-  <div>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-   <div>
-    <%= f.label :date_event %><br>
-    <%= f.text_field :date_event %>
-  </div>
+<div class="section_form">
+  <div class="container">
+    <div class="row">
+      <div class="col pt-5">
+        <div class="container-form card p-5 hvr-shadow">
+          <h2>Edita el evento</h2>
+          <br>
+          <%= form_for [:admin, @event] do |f| %>
+            <div class="form-group">
+              <%= f.label :title, "Titulo del nuevo Evento" %><br>
+              <%= f.text_field :title, placeholder:"Escribe el nuevo titulo del evento", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :description, "Descripcion del nuevo evento" %><br>
+              <%= f.text_area :description, placeholder: "Escribe la nueva descripcion del evento", class: "form-control" %>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <%= f.label :date_event, "Fecha del nuevo evento" %><br>
+                  <%= f.text_field :date_event, placeholder: "Escribe la nueva fecha del evento", class: "form-control" %>
+                </div>   
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <%= f.label :header_events, "El evento es el principal" %><br>
+                  <%= f.text_field :header_events, placeholder: "True or false", class: "form-control" %>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :img, "Direccion de la imagen" %><br>
+              <%= f.text_field :img, placeholder: "Escribe la Url de la imagen del evento", class: "form-control" %>
+            </div>
 
-  <div>
-    <%= f.label :header_events %><br>
-    <%= f.text_field :header_events %>
+            <div>
+              <%= f.submit "Editar evento", class: "btn btn-warning" %>
+            </div>
+          <% end %>
+        </div>
+      </div>  
+    </div>
   </div>
+</div>
 
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>

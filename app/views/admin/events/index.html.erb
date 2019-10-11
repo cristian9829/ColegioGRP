@@ -1,38 +1,35 @@
-<h1>Index Eventos Admin</h1>
-
-
-<h1>Eventos</h1>
-
-<%= link_to 'Crear un nuevo evento', new_admin_event_path, class: "btn btn-primary" %>
-
-
-<table class="table table-dark table-hover">
-    <thead>
-	    <tr>
-	      <th>Id</th>
-	      <th>Titulo</th>
-	      <th>Descripción</th>
-	      <th>header</th>
-	      <th></th>
-	    </tr>
-  	</thead>
-    <tbody>
+<div class="section__events-admin-index">
+  <h1>Eventos</h1>
+  <br><br>
+  <%= link_to 'Crear un nuevo evento', new_admin_event_path, class: "btn btn-primary" %>
+  <br>
+  <br>
+  <br>
+    <div class="row">
       <% @events.each do |evento| %>
-      <tr>
-      	<td><%= evento.id %></td>
-        <td><%= evento.title %></td>
-        <td><%= evento.description %></td>
-        <td><%= evento.header_events %></td>
-        <td>
-          <%= link_to "Ver",   admin_event_path(evento), class: "btn btn-info" %>
-          <%= link_to "Editar", edit_admin_event_path(evento) ,class: "btn btn-warning" %>
-          <%= link_to "Eliminar", admin_event_path(evento), method: :delete, data: { confirm: "¿Estás seguro de eliminar este evento?" }, class: "btn btn-danger" %>
-        </td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-
+        <div class="col-md-4 ">
+          <div class="card h-100 hvr-shadow">
+            <%= image_tag (evento.img), class: "card-img-top"%>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#"><%= evento.title %></a>
+            </h4>
+            <p class="card-text"><%= evento.description %></p>
+          </div>
+        <div class="row text-center p-4">
+          <div class="col">
+            <%= link_to "Ver",   admin_event_path(evento), class: "btn btn-info" %>    
+          </div>
+          <div class="col">
+            <%= link_to "Editar", edit_admin_event_path(evento) ,class: "btn btn-warning" %>    
+          </div>
+          <div class="col">
+              <%= link_to "Eliminar", admin_event_path(evento), method: :delete, data: { confirm: "¿Estás seguro de eliminar este evento?" }, class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 <script>
   $("#menu-toggle").click(function(e) {
     e.preventDefault();
