@@ -1,0 +1,9 @@
+<div class="col-md-4">
+	<figure class="figure">
+		<%= image_tag image.picture.thumb.url, class: "figure-img img-fluid- rounded"  %>
+	</figure>
+	<figcaption class="figure-caption"><%= image.description %>
+		<%= link_to 'Editar', edit_admin_image_path(image) %>
+		<%= link_to 'Eliminar', admin_image_path(image), method: :delete, data: { confirm: "Seguro que quieres eliminar la imagen?"} %>		
+	</figcaption>
+</div>

@@ -9,13 +9,25 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <%= link_to 'Home', root_path, class: "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
+            <%= link_to 'Inicio', root_path, class: "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
+          </li>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#" id="navbardrop" data-toggle="dropdown">
+              El Colegio
+            <div class="dropdown-menu">
+              <%= link_to 'Conocenos', center_interesings_path, class: "dropdown-item" %>
+              <%= link_to 'Mision, Vision y P.E.I', events_path, class: "dropdown-item" %>
+              <%= link_to 'Eventos', events_path, class: "dropdown-item" %>
+              <%= link_to 'Centro Interés', center_interesings_path, class: "dropdown-item" %>
+              <%= link_to 'Circulares', center_interesings_path, class: "dropdown-item" %>
+            </div>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <%= link_to 'Centro Interés', center_interesings_path, class: "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
+            <%= link_to 'Galeria', root_path, class: "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <%= link_to 'Eventos', events_path, class: "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
+            <%= link_to 'Ubiquenos', root_path, class: "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
           </li>
           <% if signed_in? %>
             <li class="nav-item mx-0 mx-lg-1">

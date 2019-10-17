@@ -40,3 +40,7 @@ Event.create(
 	img: "https://cdn.pixabay.com/photo/2018/06/12/19/59/football-3471371_960_720.jpg"
 )
 
+Image.create(
+	description: "prueba", likes_counter: "3"
+)
+
