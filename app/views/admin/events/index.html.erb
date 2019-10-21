@@ -9,7 +9,7 @@
       <% @events.each do |evento| %>
         <div class="col-md-4 ">
           <div class="card h-100 hvr-shadow">
-            <%= image_tag (evento.img), class: "card-img-top"%>
+            <%= image_tag evento.img.medium.url, class: "figure-img img-fluid- rounded"  %>
           <div class="card-body">
             <h4 class="card-title">
               <a href="#"><%= evento.title %></a>

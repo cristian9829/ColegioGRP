@@ -1,16 +1,26 @@
 <div class="section__admin-index">
 	<div class="container">
+		<div class="title">
+			<h3>Administrador</h3>
+		</div>
 		<div class="row">
-			<div class="col">
+			<div class="col-md-6 mt-5">
 				<%= link_to admin_events_path, class: "card hvr-grow-shadow" do  %>
 					<h3>Numero de Eventos</h3>
 					<span> <%=@Events %></span>
 				<% end %>
 			</div>
-			<div class="col">
+			<div class="col-md-6 mt-5">
 				<%= link_to admin_events_path, class: "card hvr-grow-shadow" do  %>
-					<h3>Numero de Eventos</h3>
-					<span> <%=@Events %></span>
+					<h3>Numero de centro de intereses</h3>
+					<span> <%=@CentroInteres %></span>
+				<% end %>
+			</div>
+			<br>
+			<div class="col-md-6 mt-5">
+				<%= link_to admin_events_path, class: "card hvr-grow-shadow" do  %>
+					<h3>Numero de imagenes de la galeria</h3>
+					<span> <%=@images %></span>
 				<% end %>
 			</div>
 		</div>

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'contacts/index'
   get '/events' , to: 'events#index'
+  get '/contacts' , to: 'contacts#index'
+  get '/galleries' , to: 'galleries#index'
   get '/center_interesings', to: 'center_interesings#index'
   resources :images
   devise_for :users

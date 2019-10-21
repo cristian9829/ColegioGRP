@@ -5,5 +5,7 @@ class Admin::PagesController < ApplicationController
 
 	def index
 		@Events = Event.all.count
+		@CentroInteres = CentroIntere.all.count
+		@images = Image.all.count
 	end
 end

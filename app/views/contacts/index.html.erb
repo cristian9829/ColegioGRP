@@ -1,0 +1,148 @@
+
+<header class="bg-primary text-white" style=" padding: 156px 0 100px;">
+    <div class="container text-center">
+      <h1>Contactanos</h1>
+      <p class="lead">Queremos que seas parte de la familia Gustavista</p>
+    </div>
+  </header>
+
+  <section style=" padding: 150px 0;" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Horarios de atencion</h2>
+          <p class="lead">En la siguiente lista daremos a conocer los horarios de atencion:</p>
+          <ul>
+            <li>Lunes a Viernes de 6:00 am a 4:00 p.m.</li>
+            <li>Sabados 9:00 am a 12:00 pm</li>
+            <li>Festivos No atendemos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style=" padding: 150px 0;" id="services" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Circular Dia de la familia</h2>
+          <p>A continuacion dejamos la circular para descargar, sobre el dia de la familia</p>
+          <a  class= " btn alert-dark" href="circular_dia_familia.zip" download >Descarga la circular</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style=" padding: 150px 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Contactenos</h2>
+          <p>En esta seccion encontrara datos de contactenos con nostros, tanto via telefonica, email y por direccion</p>
+           <ul>
+           	<li>2463642 - 2891656</li>
+           	<li>colegiogustavorojasp@hotmail.com</li>
+            <li>Av Caracas # 3 - 81 S.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <section class="section_mapa">
+	<div id='map' style='width: 100%; height:500px;'></div>
+</section>
+
+<script>
+	function map(){
+	//======================= Code JavaScript, API MapBoxGl ======================================
+
+	mapboxgl.accessToken = 'pk.eyJ1IjoiY3Jpc3RpYW4tY2wiLCJhIjoiY2pzYWt3b3FyMDBqcTQzbzdlZ2xjM3FrayJ9.n216NBqfSJBaWNeUnNIUaA';
+		var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v11',
+		center: [ -74.0920055,  4.5890004], // starting position
+		zoom: 15.3,
+		pitch: 45,
+		bearing: -17.6
+	});
+
+	function rotateCamera(timestamp) {
+		// clamp the rotation between 0 -360 degrees
+		// Divide timestamp by 100 to slow rotation to ~10 degrees / sec
+		map.rotateTo((timestamp / 100) % 360, {duration: 0});
+		// Request the next frame of the animation.
+		requestAnimationFrame(rotateCamera);
+	}
+
+	map.on('load', function() {
+		// Insert the layer beneath any symbol layer.
+		var layers = map.getStyle().layers;
+		// disable map zoom when using scroll
+		 
+		var labelLayerId;
+		for (var i = 0; i < layers.length; i++) {
+			if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+			labelLayerId = layers[i].id;
+			break;
+			}
+		}
+			 
+		map.addLayer({
+			'id': '3d-buildings',
+			'source': 'composite',
+			'source-layer': 'building',
+			'filter': ['==', 'extrude', 'true'],
+			'type': 'fill-extrusion',
+			'minzoom': 15,
+			'paint': {
+				'fill-extrusion-color': '#aaa',
+				 
+				// use an 'interpolate' expression to add a smooth transition effect to the
+				// buildings as the user zooms in
+				'fill-extrusion-height': [
+					"interpolate", ["linear"], ["zoom"],
+					15, 0,
+					15.05, ["get", "height"]
+				],
+				'fill-extrusion-base': [
+					"interpolate", ["linear"], ["zoom"],
+					15, 0,
+					15.05, ["get", "min_height"]
+				],
+				'fill-extrusion-opacity': .6
+			}
+		}, labelLayerId);
+	});
+
+	map.loadImage('https://cdn2.iconfinder.com/data/icons/pittogrammi/142/94-512.png', function(error, image) {
+		if (error) throw error;
+			map.addImage('location', image);
+			map.addLayer({
+				"id": "points",
+				"type": "symbol",
+				"source": {
+					"type": "geojson",
+					"data": {
+						"type": "FeatureCollection",
+						"features": [{
+						"type": "Feature",
+							"geometry": {
+							"type": "Point",
+							"coordinates": [ -74.0920055,  4.5890004]
+							}
+						}]
+					}
+				},
+				"layout": {
+				"icon-image": "location",
+				"icon-size": 0.10
+				}
+			});
+		});
+	//======================= Code JavaScript, API MapBoxGl ======================================
+}
+
+map();
+</script>
