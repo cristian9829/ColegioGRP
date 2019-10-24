@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/school' , to: 'school#index'
   get 'contacts/index'
   get '/events' , to: 'events#index'
   get '/contacts' , to: 'contacts#index'
