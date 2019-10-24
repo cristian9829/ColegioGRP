@@ -16,7 +16,7 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#" id="navbardrop" data-toggle="dropdown">
               El Colegio
             <div class="dropdown-menu">
-              <%= link_to 'Conocenos', center_interesings_path, class: "dropdown-item" %>
+              <%= link_to 'Conocenos', school_path, class: "dropdown-item" %>
               <%= link_to 'Eventos', events_path, class: "dropdown-item" %>
               <%= link_to 'Centro Interés', center_interesings_path, class: "dropdown-item" %>
             </div>
@@ -25,7 +25,7 @@
             <%= link_to 'Galeria', galleries_path, class: "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <%= link_to 'Contactenos', root_path, class: "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
+            <%= link_to 'Contactenos', contacts_index_path, class: "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" %>
           </li>
           <% if signed_in? %>
             <li class="nav-item mx-0 mx-lg-1">
