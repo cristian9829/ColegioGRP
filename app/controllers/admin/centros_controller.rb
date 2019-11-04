@@ -43,7 +43,7 @@ class Admin::CentrosController < ApplicationController
 	  centro = CentroIntere.find(params[:id])
 	  centro.destroy
 
-	  redirect_to admin_centro_path
+	  redirect_to admin_centros_path
 	end
 
 

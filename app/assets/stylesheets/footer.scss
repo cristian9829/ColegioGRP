@@ -1,6 +1,18 @@
 .footer{
 	border:auto solid blue;
 	background-color:#DFE0EC ;
+	img{
+		border-radius: 150px;
+	}
+	.container-mails{
+		display: flex; justify-content: center;
+		margin: 25px 0px;
+		.fa-facebook, .fa-envelope{
+			font-size: 30px;
+			margin: 0px 10px;
+		
+		}
+	}
 }
  input {
 	height:65px;

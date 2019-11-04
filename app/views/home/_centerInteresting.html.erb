@@ -17,21 +17,21 @@
       <!-- Portfolio Grid Items -->
       <div class="row">
         
-        <% @CentroInteres.each do |centro| %>
+        <% @CentroInteres.each_with_index do |centro, index| %>
           <!-- Portfolio Item 1 -->
-          <div class="col-md-6 col-lg-4">
-            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+          <div class="col-md-6 col-lg-4 hvr-shrink">
+            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal<%= index %>">
               <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="portfolio-item-caption-content text-center text-white">
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
-              <%= image_tag (centro.img), class: "img-fluid " %>
+              <%= image_tag centro.img.medium.url, class: "figure-img img-fluid rounded"  %>
             </div>
           </div>
         
           <!-- Portfolio Modal 1 -->
-          <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+          <div class="portfolio-modal modal fade" id="portfolioModal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
               <div class="modal-content">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -44,7 +44,7 @@
                     <div class="row justify-content-center">
                       <div class="col-lg-8">
                         <!-- Portfolio Modal - Title -->
-                        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"><%= centro.title %></h2>
+                        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"><%= centro.title %> </h2>
                         <!-- Icon Divider -->
                         <div class="divider-custom">
                           <div class="divider-custom-line"></div>
@@ -53,7 +53,7 @@
                           </div>
                           <div class="divider-custom-line"></div>
                         </div>
-                        <%= image_tag (centro.img), class: "mg-fluid rounded mb-5 " %>
+                        <%= image_tag centro.img.medium.url, class: "figure-img img-fluid rounded"  %>
                         <!-- Portfolio Modal - Text -->
                         <p class="mb-5"><p><%= centro.description %>.</p>
                         <button class="btn btn-primary" href="#" data-dismiss="modal">
