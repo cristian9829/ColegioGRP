@@ -1,7 +1,7 @@
 
 .section__home-hero{
   height: 760px;
-  background-image: asset_url("about2.jpg");
+  background-image: url("https://d2yoo3qu6vrk5d.cloudfront.net/pulzo-lite/images/CC7/ColegioGRP/hero.jpg");
   background-size: cover;
   background-position: 30% 71%;
   background-attachment: fixed;
@@ -20,8 +20,8 @@
   }
 }
 
-
-.line-1{
+.container-animate-slogan{
+  .line-1{
   position: relative;
   top: 50%;  
   width: 100%;
@@ -32,6 +32,7 @@
   white-space: nowrap;
   overflow: hidden;
   transform: translateY(-50%);    
+  }
 }
 
 /* Animation */

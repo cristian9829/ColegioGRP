@@ -3,7 +3,7 @@
     <div class="carousel-inner" role="listbox">
       <!-- Slide One - Set the background image for this slide in the line below -->
       <div class="carousel-item active" style="background-image: url('https://d2yoo3qu6vrk5d.cloudfront.net/pulzo-lite/images/CC7/ColegioGRP/dia+de+la+familia.jpeg');">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption d-md-block">
           <h3 class="display-4 text-white">Galeria</h3>
           <p class="lead">Gustavo Rojas Pinilla</p>
         </div>
@@ -17,7 +17,7 @@
   <hr class="mt-2 mb-5">
   <div class="row text-center text-lg-left">
     <% @images.each do |imagen| %>
-      <div style="display: flex; align-items: center; justify-content: center;" class="col-lg-4 col-md-4 col-6">
+      <div style="display: flex; align-items: center; justify-content: center;" class="col-lg-4 col-md-4 col-12">
         <%= image_tag imagen.picture, class: "figure-img img-fluid rounded", style: "height: 240px;"  %>
      </div>
     <% end %>
