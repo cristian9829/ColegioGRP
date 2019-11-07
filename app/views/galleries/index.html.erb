@@ -17,10 +17,8 @@
   <hr class="mt-2 mb-5">
   <div class="row text-center text-lg-left">
     <% @images.each do |imagen| %>
-      <div class="col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-          <%= image_tag imagen.picture, class: "figure-img img-fluid rounded"  %>
-        </a>
+      <div style="display: flex; align-items: center; justify-content: center;" class="col-lg-4 col-md-4 col-6">
+        <%= image_tag imagen.picture, class: "figure-img img-fluid rounded", style: "height: 240px;"  %>
      </div>
     <% end %>
   </div>
