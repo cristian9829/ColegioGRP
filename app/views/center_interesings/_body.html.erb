@@ -9,7 +9,11 @@
   <% @CentroInteres.each do |centro| %>
     <div class="row">
       <div class="col-md-7">
-        <%= image_tag centro.img.medium.url, class: "img-fluid rounded"  %>
+        <% if centro.img  %>
+          <%= image_tag centro.img, class: "img-fluid rounded"  %>
+        <% else %>
+          <img src="https://dnw5ax76vq1gg.cloudfront.net/default.jpg" class="img-fluid rounded" alt="">
+        <% end %>
       </div>
       <div class="col-md-5">
         <h3><%= centro.title %></h3>

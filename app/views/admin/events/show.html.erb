@@ -4,7 +4,11 @@
 			<br><br>
 		<div class="row">
 	        <div class="col-md-7">
-	            <%= image_tag @event.img.thumb.url, class: "figure-img img-fluid rounded"  %>
+	        	<% if @event.img %>
+              		<%= image_tag @event.img, class: "figure-img img-fluid rounded"  %>
+	            <%else%>
+	              <img src="https://dnw5ax76vq1gg.cloudfront.net/default.jpg" class="figure-img img-fluid rounded" alt="">
+	            <% end %>
 	        </div>
 	        <div class="col-md-5">
 	          <span>Fecha del evento: <strong><%= @event.date_event %></strong></span>

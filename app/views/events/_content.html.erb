@@ -11,7 +11,11 @@
     <% @events.each do |event| %>
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card h-100 hvr-shadow">
-          <%= image_tag event.img.medium.url, class: "card-img-top"  %>
+          <% if event.img %>
+            <%= image_tag event.img, class: "card-img-top"  %>
+          <%else%>
+            <img src="https://dnw5ax76vq1gg.cloudfront.net/default.jpg" class="figure-img img-fluid rounded" alt="">
+          <% end %>
           <div class="card-body">
             <span> <%= event.date_event %> </span>
             <h4 class="card-title">

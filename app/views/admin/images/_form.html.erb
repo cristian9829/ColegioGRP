@@ -11,7 +11,7 @@
 
             <div class="form-group">
               <%= f.label :picture , "Descripcion del nuevo evento" %><br>
-              <%= f.file_field :picture %>
+              <%= f.text_field :picture, placeholder: "Escriba la url de la imagen", class: "form-control" %>
             </div>
 
             <div>

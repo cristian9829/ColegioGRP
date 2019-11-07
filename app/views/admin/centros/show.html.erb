@@ -1,6 +1,10 @@
 <div class="col-lg-6 mb-4">
   <div class="card h-100">
-    <%= image_tag @CentroIntere.img.medium.url, class: "card-img-top"  %>
+  	<% if @CentroIntere.img  %>
+      <%= image_tag @CentroIntere.img, class: "figure-img img-fluid rounded"  %>
+    <% else %>
+      <img src="https://dnw5ax76vq1gg.cloudfront.net/default.jpg" class="figure-img img-fluid rounded" alt="">
+    <% end %>
     <div class="card-body">
       <h4 class="card-title">
         <a href="#"><%= @CentroIntere.title  %></a>
